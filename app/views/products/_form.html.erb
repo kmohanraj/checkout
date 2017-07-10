@@ -1,0 +1,26 @@
+
+<%= form_for :product, url:{controller: "products", action: "create"} do |f|%>
+	<p>
+		<%= f.label :name%>
+		<%= f.text_field :name%>
+	</p>
+
+	<p>
+		<%= f.label :desc%>
+		<%= f.text_field :desc%>
+	</p>
+
+	<p>
+		<%= f.label :in_stock%>
+		<%= f.text_field :in_stock%>
+	</p>
+
+	<p>
+		<%= f.label :price%>
+		<%= f.text_field :price%>
+	</p>
+
+	<p>
+		<%= f.submit%>
+	</p>
+<% end %>

@@ -1,0 +1,33 @@
+
+<%= link_to "New Product", new_product_path(@product)%>
+<h2>Listing Products</h2>
+
+<% for product in @products %>
+	<div class="p">
+		<h3>
+			<%= link_to h(product.name), product%> </br>
+			<p>
+				<strong>Desc:</strong>
+				<%= product.desc%>
+			</p>
+			<p>
+			<strong>Stock:</strong>	
+			<%= product.in_stock%>
+			</p>
+			<%= number_to_currency(product.price)%>
+		</h3>
+
+		<div>
+			<%= link_to "add cart", carts_path(product: product), method: :post%>
+		</div>
+	</div>
+<% end %>
+
+
+<style type="text/css">
+.p{
+	width: 5.5%%;
+    float: left;
+        padding-left: 16%;
+}
+</style>
